@@ -1,15 +1,9 @@
 package com.example.lfuryk.marketplace.presenter;
 
-import android.util.Log;
-
-import com.example.lfuryk.marketplace.model.Item;
 import com.example.lfuryk.marketplace.model.ItemHandler;
-import com.example.lfuryk.marketplace.model.retrofitImplementation.APICall;
-import com.example.lfuryk.marketplace.model.retrofitImplementation.ListProduct;
-import com.example.lfuryk.marketplace.model.retrofitImplementation.MercadoLibreAPICall;
+import com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall.APICall;
+import com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall.ListProduct;
 import com.example.lfuryk.marketplace.view.MarketPlaceActivity;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

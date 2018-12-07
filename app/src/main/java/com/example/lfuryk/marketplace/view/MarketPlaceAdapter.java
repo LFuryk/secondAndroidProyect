@@ -10,10 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.lfuryk.marketplace.R;
-import com.example.lfuryk.marketplace.model.Item;
-import com.example.lfuryk.marketplace.model.retrofitImplementation.Product;
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.drawee.interfaces.DraweeController;
+import com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall.Product;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;

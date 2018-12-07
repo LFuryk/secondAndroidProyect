@@ -4,11 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.View;
 
 import com.example.lfuryk.marketplace.R;
-import com.example.lfuryk.marketplace.model.Item;
-import com.example.lfuryk.marketplace.model.retrofitImplementation.Product;
+import com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall.Product;
 import com.example.lfuryk.marketplace.presenter.MarketPlacePresenter;
 
 import java.util.List;

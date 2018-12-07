@@ -1,7 +1,6 @@
 package com.example.lfuryk.marketplace.view;
 
-import com.example.lfuryk.marketplace.model.Item;
-import com.example.lfuryk.marketplace.model.retrofitImplementation.Product;
+import com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall.Product;
 
 import java.util.List;
 

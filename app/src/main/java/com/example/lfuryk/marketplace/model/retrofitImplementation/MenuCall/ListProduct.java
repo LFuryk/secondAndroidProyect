@@ -1,4 +1,4 @@
-package com.example.lfuryk.marketplace.model.retrofitImplementation;
+package com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall;
 
 import com.google.gson.annotations.SerializedName;
 

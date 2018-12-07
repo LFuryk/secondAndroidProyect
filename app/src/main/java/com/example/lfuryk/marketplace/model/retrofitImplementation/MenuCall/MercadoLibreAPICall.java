@@ -1,8 +1,6 @@
-package com.example.lfuryk.marketplace.model.retrofitImplementation;
+package com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall;
 
-import com.example.lfuryk.marketplace.model.Item;
-
-import java.util.List;
+import com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall.ListProduct;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
