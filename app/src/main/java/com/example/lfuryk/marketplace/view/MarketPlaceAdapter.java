@@ -1,5 +1,6 @@
 package com.example.lfuryk.marketplace.view;
 
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,9 @@ import android.widget.TextView;
 
 import com.example.lfuryk.marketplace.R;
 import com.example.lfuryk.marketplace.model.Item;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -37,6 +41,14 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
         itemViewHolder.mDescriptionTextView.setText(item.getDescription());
         itemViewHolder.mPriceTextView.setText(item.getPrice());
 
+        Uri uri = Uri.parse(item.getImageURI());
+
+        DraweeController controller = Fresco.newDraweeControllerBuilder()
+                .setUri(uri)
+                .setAutoPlayAnimations(true)
+                .build();
+        itemViewHolder.mImageView.setController(controller);
+
     }
 
     @Override
@@ -49,12 +61,14 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
         private TextView mTittleTextView;
         private TextView mPriceTextView;
         private TextView mDescriptionTextView;
+        private SimpleDraweeView mImageView;
 
         public ItemViewHolder(LinearLayout linearLayout) {
             super(linearLayout);
             mTittleTextView = linearLayout.findViewById(R.id.item_tittle);
             mPriceTextView = linearLayout.findViewById(R.id.item_price);
             mDescriptionTextView = linearLayout.findViewById(R.id.item_description);
+            mImageView = linearLayout.findViewById(R.id.my_image_view);
         }
     }
 }

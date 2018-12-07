@@ -5,12 +5,14 @@ public class Item {
     private String mName;
     private String mDescription;
     private String mPrice;
+    private String mImageURI;
 
-    public Item(String name, String description, String price){
+    public Item(String name, String description, String price, String imageURI) {
 
         this.mName = name;
         this.mDescription = description;
         this.mPrice = price;
+        this.mImageURI = imageURI;
 
     }
 
@@ -24,5 +26,9 @@ public class Item {
 
     public String getPrice() {
         return this.mPrice;
+    }
+
+    public String getImageURI() {
+        return this.mImageURI;
     }
 }

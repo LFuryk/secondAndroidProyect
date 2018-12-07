@@ -7,11 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.lfuryk.marketplace.R;
+import com.example.lfuryk.marketplace.model.MessageEvent;
 import com.example.lfuryk.marketplace.model.User;
 import com.example.lfuryk.marketplace.presenter.LoginPresenter;
+
+import org.greenrobot.eventbus.EventBus;
 
 public class LoginActivity extends AppCompatActivity implements LoginPresenter.LoginView {
 
@@ -29,6 +31,7 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.L
         setContentView(R.layout.activity_login);
 
         mTextInputEditUsername = findViewById(R.id.username_text_input);
+        mTextInputEditUsername.setOnKeyListener(mKeyListener);
 
         mTextInputEditPassword = findViewById(R.id.password_text_input);
 
@@ -46,9 +49,23 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.L
         }
     };
 
+    private View.OnKeyListener mKeyListener = new View.OnKeyListener() {
+        @Override
+        public boolean onKey(View v, int keyCode, KeyEvent event) {
+            EventBus.getDefault().post(new MessageEvent(mTextInputEditUsername.getText().toString()));
+            return false;
+        }
+    };
+
     @Override
     public void login() {
         Intent intent = new Intent(this, MarketPlaceActivity.class);
         startActivity(intent);
+        mLoginPresenter.onStop();
+    }
+
+    @Override
+    public void blankUserName(){
+        mTextInputEditUsername.setText("");
     }
 }
