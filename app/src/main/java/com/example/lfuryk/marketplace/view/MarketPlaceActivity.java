@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.lfuryk.marketplace.R;
 import com.example.lfuryk.marketplace.model.Item;
+import com.example.lfuryk.marketplace.model.retrofitImplementation.Product;
 import com.example.lfuryk.marketplace.presenter.MarketPlacePresenter;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class MarketPlaceActivity extends AppCompatActivity implements MarketPlac
     }
 
     @Override
-    public void setItems(List<Item> list) {
+    public void setItems(List<Product> list) {
         mRecyclerView.setAdapter(new MarketPlaceAdapter(list));
     }
 }

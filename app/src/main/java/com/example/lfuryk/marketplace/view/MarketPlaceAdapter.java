@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.lfuryk.marketplace.R;
 import com.example.lfuryk.marketplace.model.Item;
+import com.example.lfuryk.marketplace.model.retrofitImplementation.Product;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -18,10 +19,10 @@ import java.util.List;
 
 public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.ItemViewHolder> {
 
-    private List<Item> mItems;
+    private List<Product> mItems;
 
 
-    public MarketPlaceAdapter(List<Item> items){
+    public MarketPlaceAdapter(List<Product> items){
         this.mItems = items;
     }
 
@@ -36,18 +37,19 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int i) {
-        Item item = mItems.get(i);
-        itemViewHolder.mTittleTextView.setText(item.getName());
-        itemViewHolder.mDescriptionTextView.setText(item.getDescription());
-        itemViewHolder.mPriceTextView.setText(item.getPrice());
+        Product product = mItems.get(i);
+        itemViewHolder.mTittleTextView.setText(product.getName());
+        itemViewHolder.mDescriptionTextView.setText(product.getDescription());
+        itemViewHolder.mPriceTextView.setText(product.getPrice());
 
-        Uri uri = Uri.parse(item.getImageURI());
+        Uri uri = Uri.parse(product.getImageURI());
+        itemViewHolder.mImageView.setImageURI(uri);
 
-        DraweeController controller = Fresco.newDraweeControllerBuilder()
+        /*DraweeController controller = Fresco.newDraweeControllerBuilder()
                 .setUri(uri)
                 .setAutoPlayAnimations(true)
                 .build();
-        itemViewHolder.mImageView.setController(controller);
+        itemViewHolder.mImageView.setController(controller);*/
 
     }
 
