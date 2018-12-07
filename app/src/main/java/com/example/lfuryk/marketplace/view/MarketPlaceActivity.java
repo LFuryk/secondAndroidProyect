@@ -3,6 +3,8 @@ package com.example.lfuryk.marketplace.view;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.View;
 
 import com.example.lfuryk.marketplace.R;
 import com.example.lfuryk.marketplace.model.Item;
@@ -22,6 +24,7 @@ public class MarketPlaceActivity extends AppCompatActivity implements MarketPlac
         setContentView(R.layout.activity_market_place);
 
         mRecyclerView = findViewById(R.id.list);
+        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 
         mMarketPlacePresenter = new MarketPlacePresenter(this);
     }

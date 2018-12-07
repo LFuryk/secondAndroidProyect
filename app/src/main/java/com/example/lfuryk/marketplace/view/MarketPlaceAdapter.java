@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -32,6 +33,7 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.view_item, viewGroup, false);
+        linearLayout.setOnClickListener(mOnClickListener);
         return new ItemViewHolder(linearLayout);
     }
 
@@ -40,7 +42,8 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
         Product product = mItems.get(i);
         itemViewHolder.mTittleTextView.setText(product.getName());
         itemViewHolder.mDescriptionTextView.setText(product.getDescription());
-        itemViewHolder.mPriceTextView.setText(product.getPrice());
+        itemViewHolder.mPriceTextView.setText("Precio: $"+product.getPrice());
+
 
         Uri uri = Uri.parse(product.getImageURI());
         itemViewHolder.mImageView.setImageURI(uri);
@@ -52,6 +55,16 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
         itemViewHolder.mImageView.setController(controller);*/
 
     }
+
+    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            /*
+            * Intent to next view
+            *
+            */
+        }
+    };
 
     @Override
     public int getItemCount() {
