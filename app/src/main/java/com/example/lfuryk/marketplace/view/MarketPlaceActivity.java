@@ -2,6 +2,7 @@ package com.example.lfuryk.marketplace.view;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -38,6 +39,12 @@ public class MarketPlaceActivity extends AppCompatActivity implements MarketPlac
         mSearchView.setOnQueryTextListener(mSearchKey);
 
         mMarketPlacePresenter = new MarketPlacePresenter(this);
+
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        Uri data = intent.getData();
+        mSearchView.setQuery(data.getPath(),true);
+
     }
 
     @Override
