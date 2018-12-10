@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Product {
 
+    @SerializedName("id")
+    private String mId;
+
     @SerializedName("title")
     private String mName;
 
@@ -16,12 +19,13 @@ public class Product {
     @SerializedName("thumbnail")
     private String mImageURI;
 
-    public Product(String name, String description, String price, String imageURI) {
+    public Product(String name, String description, String price, String imageURI, String id) {
 
         this.mName = name;
         this.mDescription = description;
         this.mPrice = price;
         this.mImageURI = imageURI;
+        this.mId = id;
 
     }
 
@@ -39,5 +43,9 @@ public class Product {
 
     public String getImageURI() {
         return this.mImageURI;
+    }
+
+    public String getId() {
+        return this.mId;
     }
 }

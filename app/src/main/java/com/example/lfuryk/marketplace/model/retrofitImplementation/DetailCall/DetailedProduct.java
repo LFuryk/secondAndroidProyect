@@ -21,6 +21,9 @@ public class DetailedProduct {
     @SerializedName("available_quantity")
     private String mAvailableQuantity;
 
+    @SerializedName("condition")
+    private String mCondition;
+
     public DetailedProduct(List<SecureURL> secureURLS, String tittle, String price, String warranty, String availableQuantity){
         this.mSecureURLS = secureURLS;
         this.mTittle = tittle;
