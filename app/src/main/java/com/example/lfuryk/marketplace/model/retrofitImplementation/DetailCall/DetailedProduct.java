@@ -51,4 +51,8 @@ public class DetailedProduct {
     public List<SecureURL> getSecureURLS() {
         return mSecureURLS;
     }
+
+    public String getCondition() {
+        return this.mCondition;
+    }
 }

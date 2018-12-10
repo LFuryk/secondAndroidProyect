@@ -1,5 +1,6 @@
 package com.example.lfuryk.marketplace.view;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.lfuryk.marketplace.R;
+import com.example.lfuryk.marketplace.model.retrofitImplementation.DetailCall.DetailedProduct;
 import com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall.Product;
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -18,19 +20,24 @@ import java.util.List;
 public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.ItemViewHolder> {
 
     private List<Product> mItems;
+    private Listener mListener;
 
 
-    public MarketPlaceAdapter(List<Product> items){
+    public MarketPlaceAdapter(List<Product> items, Listener listener){
         this.mItems = items;
+        this.mListener = listener;
     }
 
+    public interface Listener{
+        void onClick(String id);
+    }
 
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.view_item, viewGroup, false);
-        linearLayout.setOnClickListener(mOnClickListener);
+
         return new ItemViewHolder(linearLayout);
     }
 
@@ -40,6 +47,8 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
         itemViewHolder.mTittleTextView.setText(product.getName());
         itemViewHolder.mDescriptionTextView.setText(product.getDescription());
         itemViewHolder.mPriceTextView.setText("Precio: $"+product.getPrice());
+        itemViewHolder.itemView.setOnClickListener(v -> mListener.onClick(product.getId()));
+
 
 
         Uri uri = Uri.parse(product.getImageURI());
@@ -53,15 +62,6 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
 
     }
 
-    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            /*
-            * Intent to next view
-            *
-            */
-        }
-    };
 
     @Override
     public int getItemCount() {
