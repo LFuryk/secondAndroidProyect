@@ -52,7 +52,6 @@ public class DetailedProductActivity extends AppCompatActivity implements Detail
         mButton.setOnClickListener(mOnClickListener);
 
         mRecyclerView = findViewById(R.id.detailed_product_recycler_view);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
 
     }
@@ -72,7 +71,7 @@ public class DetailedProductActivity extends AppCompatActivity implements Detail
         mQuantity.setText("Only " + detailedProduct.getAvailableQuantity() + " left!");
         mWarranty.setText(detailedProduct.getWarranty());
 
-
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         mRecyclerView.setAdapter(new DetailedProductAdapter(detailedProduct.getSecureURLS()));
 
 

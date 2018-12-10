@@ -30,9 +30,9 @@ public class MarketPlacePresenter {
         void setItems(List<Product> list);
     }
 
-    public void onResume(){
+    public void onResume(String query){
 
-        mAPICall.products("guitarras",new Callback<ListProduct>() {
+        mAPICall.products(query,new Callback<ListProduct>() {
             @Override
             public void onResponse(Call<ListProduct> call, Response<ListProduct> response) {
                 mMarketPlaceActivity.setItems(response.body().getProducts());
