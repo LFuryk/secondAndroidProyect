@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/my_image_view"
+        android:id="@+id/detailed_product_image_view"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         fresco:actualImageScaleType="fitCenter"

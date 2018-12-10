@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     tools:context=".view.DetailedProductActivity">
 
@@ -13,13 +14,13 @@
         android:backgroundTint="@android:color/darker_gray"
         android:orientation="vertical">
 
-
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/detailed_product_image_view"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/detailed_product_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            fresco:actualImageScaleType="fitCenter"
-            fresco:placeholderImage="@mipmap/ic_launcher"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
             />
 
         <TextView
@@ -48,7 +49,7 @@
                 android:textAppearance="@android:style/TextAppearance.Material.Display1"
                 android:textColor="@color/colorPrimary"
                 android:textSize="30sp"
-                tools:text="Price" />
+                android:text="Price" />
 
             <TextView
                 android:id="@+id/detailed_product_condition"
@@ -59,7 +60,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="18sp"
                 android:typeface="monospace"
-                tools:text="new" />
+                android:text="new" />
 
         </LinearLayout>
 
@@ -75,18 +76,17 @@
                 android:textAlignment="textStart"
                 android:textAppearance="@android:style/TextAppearance.Material.Headline"
                 android:textSize="18sp"
-                tools:text="Only 2 left!" />
+                android:text="Only 2 left!" />
 
             <Button
                 android:id="@+id/detailed_product_buy_button"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="@android:color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="30sp"
-                tools:text="Comprar" />
+                android:text="Comprar" />
 
         </LinearLayout>
 
@@ -97,7 +97,7 @@
             android:textAlignment="textStart"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:typeface="monospace"
-            tools:text="Garantia" />
+            android:text="Garantia" />
 
 
     </LinearLayout>

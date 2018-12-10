@@ -12,6 +12,7 @@ public class DetailedProductPresenter {
 
     private APICall mAPICall;
     private DetailedProductView mView;
+    private DetailedProduct model;
 
     public DetailedProductPresenter(DetailedProductView view){
         this.mView = view;
@@ -22,7 +23,8 @@ public class DetailedProductPresenter {
         mAPICall.detailedProduct(id, new Callback<DetailedProduct>() {
             @Override
             public void onResponse(Call<DetailedProduct> call, Response<DetailedProduct> response) {
-                mView.load(response.body());
+                model = response.body();
+                mView.load(model);
             }
 
             @Override
@@ -33,10 +35,15 @@ public class DetailedProductPresenter {
 
     }
 
+    public void nextPage(){
+        mView.nextPage(model.getPermalink());
+    }
+
     public interface DetailedProductView{
 
         void load(DetailedProduct detailedProduct);
         void showError(String error);
+        void nextPage(String permalink);
 
     }
 

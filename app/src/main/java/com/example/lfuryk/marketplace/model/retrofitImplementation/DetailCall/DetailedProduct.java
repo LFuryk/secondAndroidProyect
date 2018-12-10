@@ -24,12 +24,16 @@ public class DetailedProduct {
     @SerializedName("condition")
     private String mCondition;
 
-    public DetailedProduct(List<SecureURL> secureURLS, String tittle, String price, String warranty, String availableQuantity){
+    @SerializedName("permalink")
+    private String mPermalink;
+
+    public DetailedProduct(List<SecureURL> secureURLS, String tittle, String price, String warranty, String availableQuantity, String permalink){
         this.mSecureURLS = secureURLS;
         this.mTittle = tittle;
         this.mPrice = price;
         this.mWarranty = warranty;
         this.mAvailableQuantity = availableQuantity;
+        this.mPermalink = permalink;
     }
 
     public String getPrice() {
@@ -54,5 +58,9 @@ public class DetailedProduct {
 
     public String getCondition() {
         return this.mCondition;
+    }
+
+    public String getPermalink() {
+        return this.mPermalink;
     }
 }

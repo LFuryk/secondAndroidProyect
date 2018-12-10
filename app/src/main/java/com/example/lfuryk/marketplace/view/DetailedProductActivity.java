@@ -1,9 +1,14 @@
 package com.example.lfuryk.marketplace.view;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,6 +16,7 @@ import com.example.lfuryk.marketplace.R;
 import com.example.lfuryk.marketplace.model.retrofitImplementation.DetailCall.DetailedProduct;
 import com.example.lfuryk.marketplace.presenter.DetailedProductPresenter;
 import com.facebook.drawee.view.SimpleDraweeView;
+
 
 public class DetailedProductActivity extends AppCompatActivity implements DetailedProductPresenter.DetailedProductView{
 
@@ -23,7 +29,7 @@ public class DetailedProductActivity extends AppCompatActivity implements Detail
     private Button mButton;
     private TextView mWarranty;
 
-    private SimpleDraweeView mImageView;
+    private RecyclerView mRecyclerView;
 
     private String id;
 
@@ -40,10 +46,14 @@ public class DetailedProductActivity extends AppCompatActivity implements Detail
         mPrice = findViewById(R.id.detailed_product_price);
         mCondition = findViewById(R.id.detailed_product_condition);
         mQuantity = findViewById(R.id.detailed_product_quantity);
-        mButton = findViewById(R.id.detailed_product_buy_button);
         mWarranty = findViewById(R.id.detailed_product_warranty);
 
-        mImageView = findViewById(R.id.detailed_product_image_view);
+        mButton = findViewById(R.id.detailed_product_buy_button);
+        mButton.setOnClickListener(mOnClickListener);
+
+        mRecyclerView = findViewById(R.id.detailed_product_recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
 
     }
 
@@ -57,13 +67,14 @@ public class DetailedProductActivity extends AppCompatActivity implements Detail
     public void load(DetailedProduct detailedProduct){
 
         mTitle.setText(detailedProduct.getTittle());
-        mPrice.setText(detailedProduct.getPrice());
+        mPrice.setText("$" + detailedProduct.getPrice());
         mCondition.setText(detailedProduct.getCondition());
-        mQuantity.setText(detailedProduct.getAvailableQuantity());
+        mQuantity.setText("Only " + detailedProduct.getAvailableQuantity() + " left!");
         mWarranty.setText(detailedProduct.getWarranty());
 
-        Uri uri = Uri.parse(detailedProduct.getSecureURLS().get(0).getSecureUrl());
-        mImageView.setImageURI(uri);
+
+        mRecyclerView.setAdapter(new DetailedProductAdapter(detailedProduct.getSecureURLS()));
+
 
     }
 
@@ -71,4 +82,17 @@ public class DetailedProductActivity extends AppCompatActivity implements Detail
     public void showError(String error) {
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void nextPage(String permalink) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(permalink));
+        startActivity(intent);
+    }
+
+    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            mPresenter.nextPage();
+        }
+    };
 }
