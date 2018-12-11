@@ -7,7 +7,7 @@ import java.util.List;
 public class DetailedProduct {
 
     @SerializedName("seller_id")
-    private long mSellerID;
+    private String mSellerID;
 
     @SerializedName("pictures")
     private List<SecureURL> mSecureURLS;
@@ -30,7 +30,7 @@ public class DetailedProduct {
     @SerializedName("permalink")
     private String mPermalink;
 
-    public DetailedProduct(List<SecureURL> secureURLS, String tittle, String price, String warranty, String availableQuantity, String permalink, long sellerID){
+    public DetailedProduct(List<SecureURL> secureURLS, String tittle, String price, String warranty, String availableQuantity, String permalink, String sellerID){
         this.mSecureURLS = secureURLS;
         this.mTittle = tittle;
         this.mPrice = price;
@@ -68,7 +68,7 @@ public class DetailedProduct {
         return this.mPermalink;
     }
 
-    public long getSellerID() {
+    public String getSellerID() {
         return mSellerID;
     }
 }

@@ -39,12 +39,14 @@ public class DetailedProductPresenter {
         mView.nextPage(model.getPermalink());
     }
 
+    public void idSeller(){mView.idSeller(model.getSellerID());}
+
     public interface DetailedProductView{
 
         void load(DetailedProduct detailedProduct);
         void showError(String error);
         void nextPage(String permalink);
-
+        void idSeller(String id);
     }
 
 }

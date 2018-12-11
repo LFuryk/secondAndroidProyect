@@ -99,6 +99,15 @@
             android:typeface="monospace"
             android:text="Garantia" />
 
+        <Button
+            android:id="@+id/seller_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#3383FA"
+            android:fontFamily="monospace"
+            android:text="Perfil Vendedor"
+            android:textColor="#FFFFFF" />
+
 
     </LinearLayout>
 

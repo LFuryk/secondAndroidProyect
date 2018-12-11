@@ -3,18 +3,17 @@ package com.example.lfuryk.marketplace.view;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.KeyEvent;
-import android.view.View;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.lfuryk.marketplace.R;
-import com.example.lfuryk.marketplace.model.retrofitImplementation.DetailCall.DetailedProduct;
 import com.example.lfuryk.marketplace.model.retrofitImplementation.MenuCall.Product;
 import com.example.lfuryk.marketplace.presenter.MarketPlacePresenter;
 

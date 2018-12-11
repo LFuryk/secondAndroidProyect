@@ -29,6 +29,8 @@ public class DetailedProductActivity extends AppCompatActivity implements Detail
     private Button mButton;
     private TextView mWarranty;
 
+    private Button mSellerButton;
+
     private RecyclerView mRecyclerView;
 
     private String id;
@@ -50,6 +52,9 @@ public class DetailedProductActivity extends AppCompatActivity implements Detail
 
         mButton = findViewById(R.id.detailed_product_buy_button);
         mButton.setOnClickListener(mOnClickListener);
+
+        mSellerButton = findViewById(R.id.seller_button);
+        mSellerButton.setOnClickListener(mSellerButtonListener);
 
         mRecyclerView = findViewById(R.id.detailed_product_recycler_view);
 
@@ -88,10 +93,24 @@ public class DetailedProductActivity extends AppCompatActivity implements Detail
         startActivity(intent);
     }
 
+    @Override
+    public void idSeller(String id) {
+        Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("ml://vervendedor"));
+        intent.putExtra("id",id);
+        startActivity(intent);
+    }
+
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             mPresenter.nextPage();
+        }
+    };
+
+    private View.OnClickListener mSellerButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            mPresenter.idSeller();
         }
     };
 }

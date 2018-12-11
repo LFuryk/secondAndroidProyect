@@ -1,5 +1,7 @@
 package com.example.sellerview.View;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
@@ -26,6 +28,8 @@ public class SellerActivity extends AppCompatActivity implements SellerPresenter
 
     private TextView mSellerLocation;
 
+    String mIDSeller;
+
 
     @Override
 
@@ -46,12 +50,14 @@ public class SellerActivity extends AppCompatActivity implements SellerPresenter
 
         mSellerLocation = findViewById(R.id.seller_location);
 
+        Intent intent = getIntent();
+        mIDSeller = intent.getStringExtra("id");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mPresenter.loadSeller("198957661");
+        mPresenter.loadSeller(mIDSeller);
     }
 
     @Override
@@ -69,9 +75,9 @@ public class SellerActivity extends AppCompatActivity implements SellerPresenter
 
 
         mTotalOpinions.setText(seller.getSellerReputation().getTransactions().getCompleted());
-        mGoodOpinions.setProgress(positive, true);
-        mRegularOpinions.setProgress(neutral, true);
-        mBadOpinions.setProgress(negative, true);
+        mGoodOpinions.setProgress(positive);
+        mRegularOpinions.setProgress(neutral);
+        mBadOpinions.setProgress(negative);
 
         mSellerLocation.setText(seller.getAddress().getCity() + ", "+seller.getAddress().getState());
 
