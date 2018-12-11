@@ -13,9 +13,18 @@ public class Login {
     }
 
     public boolean validateLogin(User user){
-        return mUserList.getUsersPool().contains(user);
+
+       for (User u : mUserList.getUsersPool()) {
+
+            if(user.getUsername().equals(u.getUsername()) && user.getPassword().equals(u.getPassword())) {
+                return true;
+            }
+        }
+
+        return false;
         //return true;
     }
+
 
     public boolean verifyUser(String name){
 

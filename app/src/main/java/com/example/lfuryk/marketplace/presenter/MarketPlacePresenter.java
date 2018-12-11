@@ -32,17 +32,22 @@ public class MarketPlacePresenter {
 
     public void onResume(String query){
 
-        mAPICall.products(query,new Callback<ListProduct>() {
-            @Override
-            public void onResponse(Call<ListProduct> call, Response<ListProduct> response) {
-                mMarketPlaceActivity.setItems(response.body().getProducts());
-            }
-
-            @Override
-            public void onFailure(Call<ListProduct> call, Throwable t) {
-                mMarketPlaceActivity.showError("Can't load items");
-            }
-        });
+        mAPICall.products(query,mCallback);
     }
 
+    private Callback<ListProduct> mCallback = new Callback<ListProduct>() {
+        @Override
+        public void onResponse(Call<ListProduct> call, Response<ListProduct> response) {
+            mMarketPlaceActivity.setItems(response.body().getProducts());
+        }
+
+        @Override
+        public void onFailure(Call<ListProduct> call, Throwable t) {
+            mMarketPlaceActivity.showError("Can't load items");
+        }
+    };
+
+    public Callback<ListProduct> getCallback() {
+        return mCallback;
+    }
 }

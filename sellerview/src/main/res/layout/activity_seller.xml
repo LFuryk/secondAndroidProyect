@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SellerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#F5F5F5">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"
+         android:orientation="vertical">
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:layout_marginTop="10dp"
+             android:text="Nombre Vendedor"
+             android:textAlignment="center"
+             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+             android:textColor="@android:color/black" />
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginVertical="10dp"
+             android:fontFamily="monospace"
+             android:text="1000 ventas en total"
+             android:textAlignment="center"
+             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+             android:textColor="@android:color/background_dark" />
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="20dp"
+             android:orientation="horizontal"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginBottom="10dp"
+             >
+
+             <View
+                 android:layout_width="70dp"
+                 android:layout_height="match_parent"
+                 android:background="#FFE7E5"
+                 android:>
+
+             </View>
+
+             <View
+                 android:layout_width="70dp"
+                 android:layout_height="20dp"
+                 android:background="#FFF4E6">
+
+             </View>
+
+             <View
+                 android:layout_width="70dp"
+                 android:layout_height="20dp"
+                 android:background="#FFFDE5">
+
+             </View>
+
+             <View
+                 android:layout_width="70dp"
+                 android:layout_height="20dp"
+                 android:background="#F3FEE0">
+
+             </View>
+
+             <View
+                 android:layout_width="70dp"
+                 android:layout_height="20dp"
+                 android:background="#37B54B">
+
+             </View>
+
+         </LinearLayout>
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="30dp"
+             android:text="MercadoLider Gold!"
+             android:textColor="#37B54B"
+             android:textAlignment="center"
+             android:gravity="center"/>
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="20dp"
+             android:background="#FFFFFF"
+             android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="20dp"
+                 android:text="Opiniones de sus compradores:"
+                 android:textColor="@android:color/background_dark"
+                 android:layout_marginLeft="5dp"
+                 android:layout_marginBottom="10dp"/>
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="15dp"
+                 android:layout_marginBottom="5dp"
+                 android:text="372"
+                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+                 <ProgressBar
+                     style="?android:attr/progressBarStyleHorizontal"
+                     android:layout_width="200dp"
+                     android:layout_height="wrap_content"
+                     android:progress="97"
+                     android:progressBackgroundTint="#3383FA"
+                     android:progressTint="#3383FA"
+                     />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Buena"
+                     android:layout_marginLeft="15dp"/>
+             </LinearLayout>
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+                 <ProgressBar
+                     style="?android:attr/progressBarStyleHorizontal"
+                     android:layout_width="200dp"
+                     android:layout_height="wrap_content"
+                     android:progress="3"
+                     android:progressBackgroundTint="#3383FA"
+                     android:progressTint="#3383FA"
+                     />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Regular"
+                     android:layout_marginLeft="15dp"/>
+             </LinearLayout>
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+                 <ProgressBar
+                     style="?android:attr/progressBarStyleHorizontal"
+                     android:layout_width="200dp"
+                     android:layout_height="wrap_content"
+                     android:progress="0"
+                     android:progressBackgroundTint="#3383FA"
+                     android:progressTint="#3383FA"
+                     />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Mala"
+                     android:layout_marginLeft="15dp"/>
+             </LinearLayout>
+            </LinearLayout>
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:layout_marginTop="20dp"
+             android:layout_marginLeft="5dp"
+             android:layout_marginRight="5dp">
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="Ubicación:"/>
+
+         </LinearLayout>
+
+     </LinearLayout>
+
+
+
+    </LinearLayout>
+</LinearLayout>
