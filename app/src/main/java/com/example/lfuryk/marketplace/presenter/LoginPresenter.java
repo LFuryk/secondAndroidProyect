@@ -22,6 +22,13 @@ public class LoginPresenter {
         EventBus.getDefault().register(this);
     }
 
+    public LoginPresenter(LoginView view, Login login){
+
+        this.mLogin= login;
+        this.mView = view;
+        EventBus.getDefault().register(this);
+    }
+
     public void doLogin(User user){
         if(mLogin.validateLogin(user)){
             mView.login();
@@ -42,7 +49,7 @@ public class LoginPresenter {
     // This method will be called when a MessageEvent is posted (in the UI thread for Toast)
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(MessageEvent event) {
-        if(!mLogin.verifyUser(event.mMessage)){
+        if(!mLogin.verifyUser(event.getMessage())){
             mView.blankUserName();
         }
     }

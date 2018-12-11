@@ -7,4 +7,8 @@ public class MessageEvent {
     public MessageEvent(String message) {
         this.mMessage = message;
     }
+
+    public String getMessage() {
+        return this.mMessage;
+    }
 }

@@ -8,9 +8,13 @@ public class Login {
         mUserList = new UserList();
     }
 
+    public Login(UserList userList){
+        this.mUserList = userList;
+    }
+
     public boolean validateLogin(User user){
-        //return mUserList.getUsersPool().contains(user);
-        return true;
+        return mUserList.getUsersPool().contains(user);
+        //return true;
     }
 
     public boolean verifyUser(String name){

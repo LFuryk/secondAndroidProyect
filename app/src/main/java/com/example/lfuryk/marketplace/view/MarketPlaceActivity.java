@@ -10,6 +10,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.support.v7.widget.SearchView;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.lfuryk.marketplace.R;
@@ -43,13 +44,18 @@ public class MarketPlaceActivity extends AppCompatActivity implements MarketPlac
         Intent intent = getIntent();
         String action = intent.getAction();
         Uri data = intent.getData();
-        mSearchView.setQuery(data.getPath(),true);
+        if(data != null) {
+            mSearchView.setQuery(data.getPath(), true);
+        }
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
 
         SharedPreferences prefs = getSharedPreferences("LAST_SEARCH", MODE_PRIVATE);
         String restoredText = prefs.getString("LAST_SEARCH", "");
@@ -99,6 +105,8 @@ public class MarketPlaceActivity extends AppCompatActivity implements MarketPlac
             mSearchView.setIconified(false);
         }
     };
+
+
 
     private SearchView.OnQueryTextListener mSearchKey = new SearchView.OnQueryTextListener() {
 

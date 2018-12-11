@@ -14,6 +14,7 @@ public class UserList {
 
     public void initList(){
         mUsersPool.add(new User("Leandro","Leandro"));
+        mUsersPool.add(new User("usuario","contrasena"));
     }
 
     public List<User> getUsersPool() {
