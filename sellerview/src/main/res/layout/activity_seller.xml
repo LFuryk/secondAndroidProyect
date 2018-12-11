@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SellerActivity">
+    tools:context=".View.SellerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,20 +21,22 @@
          android:orientation="vertical">
 
          <TextView
+             android:id="@+id/seller_name"
              android:layout_width="match_parent"
              android:layout_height="50dp"
              android:layout_marginTop="10dp"
-             android:text="Nombre Vendedor"
+             android:text="@string/seller_name"
              android:textAlignment="center"
              android:textAppearance="@style/TextAppearance.AppCompat.Display1"
              android:textColor="@android:color/black" />
 
          <TextView
+             android:id="@+id/seller_total_sales"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_marginVertical="10dp"
              android:fontFamily="monospace"
-             android:text="1000 ventas en total"
+             android:text="@string/seller_total_sales"
              android:textAlignment="center"
              android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
              android:textColor="@android:color/background_dark" />
@@ -85,9 +87,10 @@
          </LinearLayout>
 
          <TextView
+             android:id="@+id/seller_category"
              android:layout_width="match_parent"
              android:layout_height="30dp"
-             android:text="MercadoLider Gold!"
+             android:text="@string/seller_category"
              android:textColor="#37B54B"
              android:textAlignment="center"
              android:gravity="center"/>
@@ -103,18 +106,19 @@
              <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="20dp"
-                 android:text="Opiniones de sus compradores:"
+                 android:text="@string/seller_opinions"
                  android:textColor="@android:color/background_dark"
                  android:layout_marginLeft="5dp"
                  android:layout_marginBottom="10dp"
                  android:layout_marginTop="5dp"/>
 
              <TextView
+                 android:id="@+id/seller_total_opinions"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:layout_marginLeft="15dp"
                  android:layout_marginBottom="5dp"
-                 android:text="372"
+                 android:text="@string/seller_total_opinions"
                  android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
             <LinearLayout
                 android:layout_width="match_parent"
@@ -130,6 +134,7 @@
                  android:orientation="horizontal">
 
                  <ProgressBar
+                     android:id="@+id/seller_good_opinions"
                      style="?android:attr/progressBarStyleHorizontal"
                      android:layout_width="200dp"
                      android:layout_height="wrap_content"
@@ -150,6 +155,7 @@
                  android:orientation="horizontal">
 
                  <ProgressBar
+                     android:id="@+id/seller_regular_opinions"
                      style="?android:attr/progressBarStyleHorizontal"
                      android:layout_width="200dp"
                      android:layout_height="wrap_content"
@@ -170,6 +176,7 @@
                  android:orientation="horizontal">
 
                  <ProgressBar
+                     android:id="@+id/seller_bad_opinions"
                      style="?android:attr/progressBarStyleHorizontal"
                      android:layout_width="200dp"
                      android:layout_height="wrap_content"
@@ -200,7 +207,7 @@
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:fontFamily="sans-serif"
-                 android:text="Ubicación"
+                 android:text="@string/seller_location_tittle"
                  android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                  android:textSize="18sp"
                  android:textStyle="bold"
@@ -208,9 +215,10 @@
                  android:layout_marginTop="10dp"/>
 
              <TextView
+                 android:id="@+id/seller_location"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="San Cristobal, Capital Federal."
+                 android:text="@string/seller_location"
                  android:textColor="@android:color/background_dark"
                  android:layout_marginBottom="20dp"/>
 

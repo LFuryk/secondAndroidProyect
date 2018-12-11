@@ -5,31 +5,31 @@ import com.google.gson.annotations.SerializedName;
 public class Ratings {
 
     @SerializedName("negative")
-    private double mNegative;
+    private String mNegative;
 
     @SerializedName("neutral")
-    private double mNeutral;
+    private String mNeutral;
 
     @SerializedName("positive")
-    private double mPositive;
+    private String mPositive;
 
-    public Ratings(double negative, double neutral, double positive){
+    public Ratings(String negative, String neutral, String positive){
 
-        this.mNegative = negative * 100;
-        this.mNeutral = negative * 100;
-        this.mPositive = positive * 100;
+        this.mNegative = negative;
+        this.mNeutral = neutral;
+        this.mPositive = positive;
 
     }
 
-    public double getNegative() {
+    public String getNegative() {
         return mNegative;
     }
 
-    public double getNeutral() {
+    public String getNeutral() {
         return mNeutral;
     }
 
-    public double getPositive() {
+    public String getPositive() {
         return mPositive;
     }
 }

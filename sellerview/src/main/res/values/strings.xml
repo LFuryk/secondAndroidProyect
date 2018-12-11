@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SellerView</string>
+
+    <string name="seller_name">Nombre del Vendedor</string>
+    <string name="seller_category">MercadoLider Gold!</string>
+    <string name="seller_total_sales">1000 ventas en total</string>
+    <string name="seller_opinions">Opiniones de sus compradores:</string>
+    <string name="seller_total_opinions">372</string>
+    <string name="seller_location_tittle">Ubicación</string>
+    <string name="seller_location">San Cristobal, Capital Federal.</string>
 </resources>

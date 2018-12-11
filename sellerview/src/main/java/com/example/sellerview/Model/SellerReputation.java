@@ -14,4 +14,21 @@ public class SellerReputation {
     @SerializedName("transactions")
     private Transactions mTransactions;
 
+    public SellerReputation(String levelID, String powerSellerStatus, Transactions transactions){
+        this.mLevelID = levelID;
+        this.mPowerSellerStatus = powerSellerStatus;
+        this.mTransactions = transactions;
+    }
+
+    public String getLevelID() {
+        return mLevelID;
+    }
+
+    public String getPowerSellerStatus() {
+        return mPowerSellerStatus;
+    }
+
+    public Transactions getTransactions() {
+        return mTransactions;
+    }
 }

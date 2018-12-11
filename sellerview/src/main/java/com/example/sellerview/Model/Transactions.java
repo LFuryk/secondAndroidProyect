@@ -5,10 +5,10 @@ import com.google.gson.annotations.SerializedName;
 public class Transactions {
 
     @SerializedName("canceled")
-    private int mCanceled;
+    private String mCanceled;
 
     @SerializedName("completed")
-    private int mCompleted;
+    private String mCompleted;
 
     @SerializedName("period")
     private String mPeriod;
@@ -17,9 +17,9 @@ public class Transactions {
     private Ratings mRatings;
 
     @SerializedName("total")
-    private int mTotal;
+    private String mTotal;
 
-    public Transactions(int canceled, int completed, String period, Ratings ratings, int total){
+    public Transactions(String canceled, String completed, String period, Ratings ratings, String total){
 
         this.mCanceled = canceled;
         this.mCompleted = completed;
@@ -29,15 +29,15 @@ public class Transactions {
 
     }
 
-    public int getCanceled() {
+    public String getCanceled() {
         return mCanceled;
     }
 
-    public int getCompleted() {
+    public String getCompleted() {
         return mCompleted;
     }
 
-    public int getTotal() {
+    public String getTotal() {
         return mTotal;
     }
 

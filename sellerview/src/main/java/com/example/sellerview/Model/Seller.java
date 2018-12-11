@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class Seller {
 
     @SerializedName("id")
-    private long mID;
+    private String mID;
 
     @SerializedName("nickname")
     private String mNickname;
@@ -16,7 +16,7 @@ public class Seller {
     @SerializedName("seller_reputation")
     private SellerReputation mSellerReputation;
 
-    public Seller(long id, String nickname, Address address, SellerReputation sellerReputation){
+    public Seller(String id, String nickname, Address address, SellerReputation sellerReputation){
 
         this.mID = id;
         this.mNickname = nickname;
@@ -29,7 +29,7 @@ public class Seller {
         return mAddress;
     }
 
-    public long getID() {
+    public String getID() {
         return mID;
     }
 
