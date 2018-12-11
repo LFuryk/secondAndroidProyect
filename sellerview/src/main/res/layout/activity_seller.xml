@@ -50,8 +50,7 @@
              <View
                  android:layout_width="70dp"
                  android:layout_height="match_parent"
-                 android:background="#FFE7E5"
-                 android:>
+                 android:background="#FFE7E5">
 
              </View>
 
@@ -97,6 +96,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_marginTop="20dp"
+             android:paddingBottom="20dp"
              android:background="#FFFFFF"
              android:orientation="vertical">
 
@@ -106,7 +106,8 @@
                  android:text="Opiniones de sus compradores:"
                  android:textColor="@android:color/background_dark"
                  android:layout_marginLeft="5dp"
-                 android:layout_marginBottom="10dp"/>
+                 android:layout_marginBottom="10dp"
+                 android:layout_marginTop="5dp"/>
 
              <TextView
                  android:layout_width="wrap_content"
@@ -119,10 +120,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp">
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
              <LinearLayout
                  android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal">
 
                  <ProgressBar
                      style="?android:attr/progressBarStyleHorizontal"
@@ -141,7 +146,8 @@
              </LinearLayout>
              <LinearLayout
                  android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal">
 
                  <ProgressBar
                      style="?android:attr/progressBarStyleHorizontal"
@@ -160,7 +166,8 @@
              </LinearLayout>
              <LinearLayout
                  android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal">
 
                  <ProgressBar
                      style="?android:attr/progressBarStyleHorizontal"
@@ -186,18 +193,30 @@
              android:orientation="vertical"
              android:layout_marginTop="20dp"
              android:layout_marginLeft="5dp"
-             android:layout_marginRight="5dp">
+             android:layout_marginRight="5dp"
+             android:paddingBottom="20dp">
 
              <TextView
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="Ubicación:"/>
+                 android:fontFamily="sans-serif"
+                 android:text="Ubicación"
+                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                 android:textSize="18sp"
+                 android:textStyle="bold"
+                 android:layout_marginBottom="10dp"
+                 android:layout_marginTop="10dp"/>
+
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="San Cristobal, Capital Federal."
+                 android:textColor="@android:color/background_dark"
+                 android:layout_marginBottom="20dp"/>
 
          </LinearLayout>
 
      </LinearLayout>
-
-
 
     </LinearLayout>
 </LinearLayout>
