@@ -53,24 +53,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 }
 
-bintray {
-    user = 'lfuryk'
-    key = 'fe9243704cb6a39fe3809abc0dde798b9f470417'
-    pkg {
-        repo = 'seller_module'
-        name = 'seller_module'
-        licenses = ['Copyfree']
-        vcsUrl = 'https://github.com/LFuryk/secondAndroidProyect.git'
-        version {
-            name = '1.0.0'
-            desc = 'Gradle Bintray MELI Seller View'
-            released  = new Date()
-            vcsTag = '1.0.0'
-            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
-        }
-    }
-}
-
 def pomConfig = {
     licenses {
         license {
@@ -95,7 +77,7 @@ def pomConfig = {
 publishing {
     publications {
         MyPublication(MavenPublication) {
-            artifactId 'bintray-publishing-sample'
+            artifactId 'seller_view'
             version project.property('version')
             pom.withXml {
                 def root = asNode()
@@ -104,6 +86,26 @@ publishing {
                 root.appendNode('url', 'https://github.com/LFuryk/secondAndroidProyect.git')
                 root.children().last() + pomConfig
             }
+        }
+    }
+}
+
+bintray {
+    user = 'lfuryk'
+    key = 'fe9243704cb6a39fe3809abc0dde798b9f470417'
+    configurations = ['archives']
+    publications = ['MyPublication']
+    pkg {
+        repo = 'seller_module'
+        name = 'seller_module'
+        licenses = ['Copyfree']
+        vcsUrl = 'https://github.com/LFuryk/secondAndroidProyect.git'
+        version {
+            name = '1.0.0'
+            desc = 'Gradle Bintray MELI Seller View'
+            released  = new Date()
+            vcsTag = '1.0.0'
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }
     }
 }
