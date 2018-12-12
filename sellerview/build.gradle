@@ -71,6 +71,27 @@ bintray {
     }
 }
 
+def pomConfig = {
+    licenses {
+        license {
+            name "Copyfree"
+            url "http://copyfree.org/"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "lfuryk"
+            name "Leandro Furyk"
+            email "leandro.furyk@mercadolibre.com"
+        }
+    }
+
+    scm {
+        url "https://github.com/LFuryk/secondAndroidProyect.git"
+    }
+}
+
 publishing {
     publications {
         MyPublication(MavenPublication) {
@@ -78,9 +99,9 @@ publishing {
             version project.property('version')
             pom.withXml {
                 def root = asNode()
-                root.appendNode('description', 'Bintray publishing example for UnBlogDecode')
-                root.appendNode('name', 'Bintray Publishing Sample')
-                root.appendNode('url', 'https://github.com/atrujillofalcon/bintray-publishing-sample')
+                root.appendNode('description', 'Gradle Bintray MELI Seller View')
+                root.appendNode('name', 'Seller Module')
+                root.appendNode('url', 'https://github.com/LFuryk/secondAndroidProyect.git')
                 root.children().last() + pomConfig
             }
         }
