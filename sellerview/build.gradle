@@ -11,6 +11,8 @@ plugins {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 28
@@ -49,4 +51,38 @@ dependencies {
     implementation 'com.android.support:support-core-utils:28.0.0'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+}
+
+bintray {
+    user = 'lfuryk'
+    key = 'fe9243704cb6a39fe3809abc0dde798b9f470417'
+    pkg {
+        repo = 'seller_module'
+        name = 'seller_module'
+        licenses = ['Copyfree']
+        vcsUrl = 'https://github.com/LFuryk/secondAndroidProyect.git'
+        version {
+            name = '1.0.0'
+            desc = 'Gradle Bintray MELI Seller View'
+            released  = new Date()
+            vcsTag = '1.0.0'
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
+    }
+}
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            artifactId 'bintray-publishing-sample'
+            version project.property('version')
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'Bintray publishing example for UnBlogDecode')
+                root.appendNode('name', 'Bintray Publishing Sample')
+                root.appendNode('url', 'https://github.com/atrujillofalcon/bintray-publishing-sample')
+                root.children().last() + pomConfig
+            }
+        }
+    }
 }
