@@ -12,5 +12,11 @@
 
     <string name="login_button">Log in</string>
 
+    <string name="ups">¡UPS!</string>
+
+    <string name="wrong_identification">El nombre de usuario o la contraseña son incorrectos.</string>
+
+    <string name="ok">Aceptar</string>
+
 
 </resources>

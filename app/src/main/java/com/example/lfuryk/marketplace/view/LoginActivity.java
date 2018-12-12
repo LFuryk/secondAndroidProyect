@@ -3,6 +3,7 @@ package com.example.lfuryk.marketplace.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -68,4 +69,13 @@ public class LoginActivity extends AppCompatActivity implements LoginPresenter.L
     public void blankUserName(){
         mTextInputEditUsername.setText("");
     }
+
+    public void showErrorDialog() {
+        FragmentManager fm = getSupportFragmentManager();
+        WrongIdentification editNameDialogFragment = WrongIdentification.newInstance();
+        editNameDialogFragment.show(fm, "modal_fragment");
+        mTextInputEditUsername.setText("");
+        mTextInputEditPassword.setText("");
+    }
+
 }

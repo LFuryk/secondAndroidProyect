@@ -32,6 +32,8 @@ public class LoginPresenter {
     public void doLogin(User user){
         if(mLogin.validateLogin(user)){
             mView.login();
+        }else{
+            mView.showErrorDialog();
         }
     }
 
@@ -39,7 +41,7 @@ public class LoginPresenter {
 
         void login();
         void blankUserName();
-
+        void showErrorDialog();
     }
 
     public void onStop() {
