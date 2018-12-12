@@ -45,8 +45,7 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
     public void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int i) {
         Product product = mItems.get(i);
         itemViewHolder.mTittleTextView.setText(product.getName());
-        itemViewHolder.mDescriptionTextView.setText(product.getDescription());
-        itemViewHolder.mPriceTextView.setText("Precio: $"+product.getPrice());
+        itemViewHolder.mPriceTextView.setText("$ "+product.getPrice());
         itemViewHolder.itemView.setOnClickListener(v -> mListener.onClick(product.getId()));
 
 
@@ -72,14 +71,12 @@ public class MarketPlaceAdapter extends RecyclerView.Adapter<MarketPlaceAdapter.
 
         private TextView mTittleTextView;
         private TextView mPriceTextView;
-        private TextView mDescriptionTextView;
         private SimpleDraweeView mImageView;
 
         public ItemViewHolder(LinearLayout linearLayout) {
             super(linearLayout);
             mTittleTextView = linearLayout.findViewById(R.id.item_tittle);
             mPriceTextView = linearLayout.findViewById(R.id.item_price);
-            mDescriptionTextView = linearLayout.findViewById(R.id.item_description);
             mImageView = linearLayout.findViewById(R.id.my_image_view);
         }
     }
